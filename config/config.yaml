@@ -1,0 +1,16 @@
+username: root
+private-key: |
+  -----BEGIN OPENSSH PRIVATE KEY-----
+  b3BlbnNzaC1rZXktdjEAAAAACmFlczI1Ni1jdHIAAAAGYmNyeXB0AAAAGAAAABDURSE5wt
+  fvkkWxLarOrr5fAAAAZAAAAAEAAAAzAAAAC3NzaC1lZDI1NTE5AAAAINvgszExx9K2NjQ5
+  Hd5Ks8Y1U8evoA3tVJzGJ/14m3i+AAAAkEStnQYf/ZpER3WosyfVKLrKY1klpyzLXWg48f
+  K3PxphxIprNtQUxZALz22EqFYBjcTBTvRw+KKr14Q2nuN81aqGmCrt/DVO/a3RCObvoOFl
+  yFi20QVPeH1MNFPEU610F48Os/KIzY0ZjXyjxAGcmqvBDHbSwjdKOo2GEfvYiKe0bnXZaj
+  jxzwAurZ3jYfBG1A==
+  -----END OPENSSH PRIVATE KEY-----
+private-key-pass: 123
+hosts:
+  - name: luks-test-01
+    addr: 192.168.100.143
+    port: 64321
+    pass: pa$$w0rd
