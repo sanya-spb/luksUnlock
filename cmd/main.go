@@ -45,6 +45,7 @@ func main() {
 			go func(h Host) {
 				semaphore <- struct{}{}
 				defer func() { <-semaphore }()
+
 				if conn, err := h.connect(conf.Username, signer); err == nil {
 					log.Printf("dial: %s\n", h.Name)
 
