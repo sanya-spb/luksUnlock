@@ -18,7 +18,7 @@ import (
 
 const (
 	ConfigFile = "./config/config.yaml"
-	MaxProc    = 1
+	MaxProc    = 10
 )
 
 type Host struct {
@@ -43,6 +43,10 @@ func main() {
 	for {
 		for _, host := range conf.Hosts {
 			go func(h Host) {
+				semaphore <- struct{}{}
+
+				defer func() { <-semaphore }()
+
 				if conn, err := h.connect(conf.Username, signer); err == nil {
 					log.Printf("dial: %s\n", h.Name)
 
@@ -50,14 +54,11 @@ func main() {
 						log.Println(err)
 					}
 
+					// give some time to boot, preventing DOS to luks
 					time.Sleep(time.Second * 10)
 				}
-				semaphore <- true
 			}(host)
 		}
-
-		time.Sleep(time.Second * 10)
-		<-semaphore
 	}
 }
 
