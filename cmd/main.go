@@ -38,7 +38,7 @@ type Config struct {
 
 func main() {
 	conf, signer := readConfig()
-	semaphore := make(chan interface{}, utils.Min(MaxProc, conf.getHostsNum()))
+	semaphore := make(chan struct{}, utils.Min(MaxProc, conf.getHostsNum()))
 
 	for {
 		for _, host := range conf.Hosts {
