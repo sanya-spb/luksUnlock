@@ -10,7 +10,43 @@ private-key: |
   -----END OPENSSH PRIVATE KEY-----
 private-key-pass: 123
 hosts:
+  - name: luks-test-00
+    addr: 192.168.100.143
+    port: 64321
+    pass: pa$$w0rd
   - name: luks-test-01
+    addr: 192.168.100.143
+    port: 64321
+    pass: pa$$w0rd
+  - name: luks-test-02
+    addr: 192.168.100.143
+    port: 64321
+    pass: pa$$w0rd
+  - name: luks-test-03
+    addr: 192.168.100.143
+    port: 64321
+    pass: pa$$w0rd
+  - name: luks-test-04
+    addr: 192.168.100.143
+    port: 64321
+    pass: pa$$w0rd
+  - name: luks-test-05
+    addr: 192.168.100.143
+    port: 64321
+    pass: pa$$w0rd
+  - name: luks-test-06
+    addr: 192.168.100.143
+    port: 64321
+    pass: pa$$w0rd
+  - name: luks-test-07
+    addr: 192.168.100.143
+    port: 64321
+    pass: pa$$w0rd
+  - name: luks-test-08
+    addr: 192.168.100.143
+    port: 64321
+    pass: pa$$w0rd
+  - name: luks-test-09
     addr: 192.168.100.143
     port: 64321
     pass: pa$$w0rd

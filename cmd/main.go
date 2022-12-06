@@ -18,7 +18,7 @@ import (
 
 const (
 	ConfigFile = "./config/config.yaml"
-	MaxProc    = 10
+	MaxProc    = 3
 )
 
 type Host struct {
@@ -42,9 +42,9 @@ func main() {
 
 	for {
 		for _, host := range conf.Hosts {
-			go func(h Host) {
-				semaphore <- struct{}{}
+			semaphore <- struct{}{}
 
+			go func(h Host) {
 				defer func() { <-semaphore }()
 
 				if conn, err := h.connect(conf.Username, signer); err == nil {
